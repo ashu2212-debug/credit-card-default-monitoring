@@ -1,0 +1,31 @@
+# Virtual Environment
+creditvenv/
+venv/
+env/
+.env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Data files (optional - agar sensitive data hai)
+# data/raw/*.csv
+# data/processed/*.pkl
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Model files (optional - agar bade hain)
+# models/*.pkl

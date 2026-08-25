@@ -1,0 +1,58 @@
+# Credit Card Default Prediction Configuration
+
+# Data Configuration
+data:
+  file_path: 'data/raw/CreditCard_5.csv'
+  target_column: 'default'
+  test_size: 0.2
+  validation_size: 0.15
+  random_state: 42
+
+# Column Definitions
+columns:
+  numeric_features:
+    - 'LIMIT_BAL'
+    - 'AGE'
+    - 'BILL_AMT1'
+    - 'BILL_AMT2'
+    - 'BILL_AMT3'
+    - 'BILL_AMT4'
+    - 'BILL_AMT5'
+    - 'BILL_AMT6'
+    - 'PAY_AMT1'
+    - 'PAY_AMT2'
+    - 'PAY_AMT3'
+    - 'PAY_AMT4'
+    - 'PAY_AMT5'
+    - 'PAY_AMT6'
+  
+  categorical_features:
+    - 'SEX'
+    - 'EDUCATION'
+    - 'MARRIAGE'
+    - 'PAY_0'
+    - 'PAY_2'
+    - 'PAY_3'
+    - 'PAY_4'
+    - 'PAY_5'
+    - 'PAY_6'
+  
+  drop_columns: []
+
+# Model Configuration
+model:
+  type: 'logistic_regression'
+  parameters:
+    logistic_regression:
+      random_state: 42
+      max_iter: 1000
+      solver: 'liblinear'
+      C: 1.0
+
+# Monitoring Thresholds
+monitoring:
+  psi_threshold_stable: 0.1
+  psi_threshold_warning: 0.2
+  auc_threshold: 0.7
+  accuracy_threshold: 0.75
+  f1_threshold: 0.7
